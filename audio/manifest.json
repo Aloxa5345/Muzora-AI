@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "file": "track_01.wav",
+    "duration": 33.44
+  },
+  {
+    "id": 2,
+    "file": "track_02.wav",
+    "duration": 38.54
+  },
+  {
+    "id": 3,
+    "file": "track_03.wav",
+    "duration": 47.38
+  },
+  {
+    "id": 4,
+    "file": "track_04.wav",
+    "duration": 66.14
+  },
+  {
+    "id": 5,
+    "file": "track_05.wav",
+    "duration": 30.02
+  },
+  {
+    "id": 6,
+    "file": "track_06.wav",
+    "duration": 33.39
+  },
+  {
+    "id": 7,
+    "file": "track_07.wav",
+    "duration": 43.15
+  },
+  {
+    "id": 8,
+    "file": "track_08.wav",
+    "duration": 42.82
+  },
+  {
+    "id": 9,
+    "file": "track_09.wav",
+    "duration": 31.38
+  },
+  {
+    "id": 10,
+    "file": "track_10.wav",
+    "duration": 31.15
+  },
+  {
+    "id": 11,
+    "file": "track_11.wav",
+    "duration": 71.0
+  },
+  {
+    "id": 12,
+    "file": "track_12.wav",
+    "duration": 29.67
+  },
+  {
+    "id": 13,
+    "file": "track_13.wav",
+    "duration": 34.08
+  },
+  {
+    "id": 14,
+    "file": "track_14.wav",
+    "duration": 39.1
+  },
+  {
+    "id": 15,
+    "file": "track_15.wav",
+    "duration": 38.34
+  },
+  {
+    "id": 16,
+    "file": "track_16.wav",
+    "duration": 34.43
+  }
+]

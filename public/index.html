@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#020207">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<title>Muzora AI — Your Mood. Your Music.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="stage">
+
+  <!-- ============ DESKTOP STAGE / BRAND PANEL ============ -->
+  <aside class="stage-info">
+    <div class="stage-logo">
+      <img src="assets/muzora-logo.png" alt="Muzora AI logo">
+      <div>
+        <h1>MUZORA <span>AI</span></h1>
+        <p class="tagline">Your Mood. Your Music.</p>
+      </div>
+    </div>
+    <p class="stage-desc">A living design system for the AI-powered music platform —
+    the interface listens, glows and morphs with your mood.</p>
+    <ul class="stage-points">
+      <li><i></i><b>Mood Orb Engine</b> — a living gradient orb that morphs with every emotion you express</li>
+      <li><i></i><b>Mood Dial</b> — slide from calm to chaos, the whole UI re-tunes itself</li>
+      <li><i></i><b>Waveform everywhere</b> — progress, volume and identity rendered as sound waves</li>
+      <li><i></i><b>Circuit Soul</b> — glowing circuit traces reveal the AI thinking beneath the glass</li>
+    </ul>
+    <div class="stage-palette">
+      <span style="--c:#8b5cf6"></span>
+      <span style="--c:#22d3ee"></span>
+      <span style="--c:#ec4899"></span>
+      <span style="--c:#f59e0b"></span>
+      <span style="--c:#10b981"></span>
+    </div>
+    <p class="stage-hint">Tap the phone to explore — try the AI tab and type a mood.</p>
+  </aside>
+
+  <!-- ============ PHONE ============ -->
+  <div class="phone">
+    <div class="phone-notch"></div>
+    <div class="screen" id="app">
+
+      <!-- ========== SPLASH ========== -->
+      <section class="scr scr-splash active" id="scr-splash">
+        <div class="aurora"><b class="a1"></b><b class="a2"></b><b class="a3"></b></div>
+        <div class="splash-inner">
+          <div class="splash-orb">
+            <img src="assets/muzora-logo.png" alt="Muzora AI">
+          </div>
+          <h1 class="splash-word">MUZORA <span>AI</span></h1>
+          <p class="splash-tag">Your Mood. Your Music.</p>
+          <div class="splash-wave" id="splashWave"></div>
+        </div>
+        <p class="splash-foot">powered by mood intelligence</p>
+      </section>
+
+      <!-- ========== LOGIN / REGISTER ========== -->
+      <section class="scr scr-auth" id="scr-auth">
+        <div class="aurora"><b class="a1"></b><b class="a2"></b></div>
+        <div class="auth-inner">
+          <svg class="circuit circuit-auth" viewBox="0 0 300 120" fill="none">
+            <path d="M10 100 H80 L100 60 H180 L200 100 H290" stroke="url(#g1)" stroke-width="1"/>
+            <path d="M10 30 H60 L80 70 H150" stroke="url(#g1)" stroke-width="1"/>
+            <circle cx="180" cy="60" r="3" fill="#22d3ee"/><circle cx="60" cy="30" r="3" fill="#8b5cf6"/>
+            <defs><linearGradient id="g1" x1="0" x2="300"><stop stop-color="#8b5cf6"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
+          </svg>
+          <img class="auth-logo" src="assets/muzora-logo.png" alt="logo">
+          <h2>Welcome back<span>.</span></h2>
+          <p class="auth-sub">Sign in and let the music feel you.</p>
+
+          <div class="seg" id="authSeg">
+            <button class="on" data-auth="login">Sign In</button>
+            <button data-auth="register">Register</button>
+            <i></i>
+          </div>
+
+          <label class="field auth-extra" id="authName" style="display:none"><span>NAME</span><input type="text" id="inpName" placeholder="Your name" autocomplete="name"></label>
+          <label class="field"><span>EMAIL</span><input type="email" id="inpEmail" placeholder="you@muzora.ai" autocomplete="email"></label>
+          <label class="field"><span>PASSWORD</span><input type="password" id="inpPass" placeholder="••••••••" autocomplete="current-password"></label>
+
+          <p class="auth-error" id="authError"></p>
+          <button class="btn-primary" id="btnAuth">Enter Muzora</button>
+          <div class="auth-alt"><span>or continue with</span></div>
+          <div class="auth-soc">
+            <button class="soc">G</button><button class="soc">f</button><button class="soc">X</button>
+          </div>
+          <p class="auth-legal">By continuing you agree to the Terms &amp; Privacy Policy.</p>
+        </div>
+      </section>
+
+      <!-- ========== TAB: HOME ========== -->
+      <section class="scr scr-tab" id="scr-home">
+        <header class="hdr">
+          <div class="hdr-left">
+            <img class="hdr-avatar" src="assets/muzora-logo.png" alt="avatar">
+            <div><p class="hdr-hi" id="hdrHi">Welcome</p><h3 id="hdrName">Listener</h3></div>
+          </div>
+          <button class="hdr-bell" data-toast="No new notifications">
+            <svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-6 6v3l-2 4h16l-2-4V9a6 6 0 0 0-6-6zM10 19a2 2 0 0 0 4 0"/></svg>
+            <i></i>
+          </button>
+        </header>
+
+        <div class="scroll">
+
+          <!-- Mood Dial -->
+          <div class="mood-dial card-glass">
+            <div class="md-top">
+              <p class="label-eyebrow">MOOD DIAL</p>
+              <p class="md-state" id="dialState">Balanced <em>· tuned mix</em></p>
+            </div>
+            <input type="range" min="0" max="100" value="50" id="moodDial">
+            <div class="md-labels"><span>calm</span><span>balanced</span><span>energetic</span></div>
+          </div>
+
+          <!-- Now Spinning hero -->
+          <div class="hero card-glass" id="heroSpin">
+            <div class="hero-disc">
+              <div class="disc-art" id="heroArt"></div>
+              <div class="disc-hole"></div>
+            </div>
+            <div class="hero-meta">
+              <p class="label-eyebrow">NOW SPINNING</p>
+              <h2 id="heroTitle">Neon Monsoon</h2>
+              <p class="hero-artist" id="heroArtist">Aarya Vale · Dream Pop</p>
+              <div class="hero-wave" id="heroWave"></div>
+              <div class="hero-btns">
+                <button class="btn-primary sm" data-play="now">Resume</button>
+                <button class="btn-ghost sm" data-toast="Added to favorites">♡ Favorite</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mood mix row -->
+          <div class="row-head">
+            <h4><span class="dot" id="mixDot"></span><span id="mixTitle">Balanced Mix</span></h4>
+            <button class="more" data-toast="Full mix in AI tab">see all</button>
+          </div>
+          <div class="rail" id="railMix"></div>
+
+          <!-- Recently played -->
+          <div class="row-head">
+            <h4>Recently Played</h4>
+            <button class="more" data-goto="library" data-libtab="recent">history</button>
+          </div>
+          <div class="rail rail-mini" id="railRecent"></div>
+
+          <!-- Real worldwide hits -->
+          <div class="row-head">
+            <h4>Real Hits <em class="world-hint">worldwide · 30s previews</em></h4>
+            <button class="more" data-goto="search">see all</button>
+          </div>
+          <div class="rail" id="railWorldHits"></div>
+
+          <!-- Featured playlists -->
+          <div class="row-head">
+            <h4>Featured Playlists</h4>
+            <button class="more" data-goto="library" data-libtab="playlists">all</button>
+          </div>
+          <div class="grid-cards" id="gridFeatured"></div>
+
+          <div class="pad-bottom"></div>
+        </div>
+      </section>
+
+      <!-- ========== TAB: SEARCH ========== -->
+      <section class="scr scr-tab" id="scr-search">
+        <header class="hdr">
+          <h3 class="hdr-title">Search</h3>
+          <p class="hdr-sub">Songs · Artists · Albums · Moods</p>
+        </header>
+        <div class="scroll">
+          <label class="searchbar">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+            <input type="text" id="searchInput" placeholder="Try “calm study” or “Aarya”…" autocomplete="off">
+            <button class="sb-clear" id="searchClear" style="display:none">✕</button>
+          </label>
+
+          <div class="chip-row" id="searchChips">
+            <button class="chip" data-q="calm">calm</button>
+            <button class="chip" data-q="focus">focus</button>
+            <button class="chip" data-q="energetic">energetic</button>
+            <button class="chip" data-q="lo-fi">lo-fi</button>
+            <button class="chip" data-q="synthwave">synthwave</button>
+            <button class="chip" data-q="bollywood">bollywood</button>
+            <button class="chip" data-q="arijit singh">arijit singh</button>
+            <button class="chip" data-q="punjabi">punjabi</button>
+          </div>
+
+          <div id="searchResults" style="display:none">
+            <div class="row-head"><h4 id="searchCount">Results</h4></div>
+            <div class="track-list" id="searchList"></div>
+            <div id="worldWrap" style="display:none">
+              <div class="row-head"><h4>Worldwide <em class="world-hint">iTunes · 30s previews</em></h4></div>
+              <div class="track-list" id="worldList"></div>
+            </div>
+          </div>
+
+          <div id="searchBrowse">
+            <div class="row-head"><h4>Browse by Mood</h4></div>
+            <div class="mood-grid">
+              <button class="mood-card" data-ai="I'm feeling calm" style="--mc1:#22d3ee;--mc2:#0ea5e9"><span>Calm</span></button>
+              <button class="mood-card" data-ai="I need focus music" style="--mc1:#818cf8;--mc2:#6366f1"><span>Focus</span></button>
+              <button class="mood-card" data-ai="Give me energetic songs" style="--mc1:#ec4899;--mc2:#f43f5e"><span>Energetic</span></button>
+              <button class="mood-card" data-ai="Play something happy" style="--mc1:#f59e0b;--mc2:#fb923c"><span>Happy</span></button>
+              <button class="mood-card" data-ai="Music for sleep" style="--mc1:#3730a3;--mc2:#4f46e5"><span>Sleep</span></button>
+              <button class="mood-card" data-ai="I feel like dreaming" style="--mc1:#a78bfa;--mc2:#8b5cf6"><span>Dreamy</span></button>
+            </div>
+
+            <div class="row-head">
+              <h4>Top Charts</h4>
+              <div class="chart-tabs">
+                <button class="chip on" data-charts="in">India</button>
+                <button class="chip" data-charts="us">Global</button>
+              </div>
+            </div>
+            <div class="rail" id="railCharts"></div>
+
+            <div class="row-head"><h4>Top Artists</h4></div>
+            <div class="rail rail-round" id="railArtists"></div>
+          </div>
+          <div class="pad-bottom"></div>
+        </div>
+      </section>
+
+      <!-- ========== TAB: AI ASSISTANT ========== -->
+      <section class="scr scr-tab" id="scr-ai">
+        <div class="ai-bg" id="aiBg"></div>
+        <header class="hdr hdr-ai">
+          <div>
+            <p class="label-eyebrow">MOOD INTELLIGENCE</p>
+            <h3 class="hdr-title">Muzora Assistant</h3>
+          </div>
+          <span class="ai-live"><i></i>online</span>
+        </header>
+
+        <div class="scroll ai-scroll">
+          <!-- Mood Ring + Orb -->
+          <div class="orb-stage">
+            <div class="orb" id="orb"><div class="orb-core"></div><div class="orb-ring r1"></div><div class="orb-ring r2"></div></div>
+            <div class="mood-ring" id="moodRing">
+              <button style="--ma:0deg"  data-mood="calm"     data-ai="I'm feeling calm">calm</button>
+              <button style="--ma:60deg" data-mood="focus"    data-ai="I need focus music">focus</button>
+              <button style="--ma:120deg" data-mood="happy"   data-ai="Play something happy">happy</button>
+              <button style="--ma:180deg" data-mood="energetic" data-ai="Give me energetic songs">energy</button>
+              <button style="--ma:240deg" data-mood="dreamy"  data-ai="I feel like dreaming">dreamy</button>
+              <button style="--ma:300deg" data-mood="sleep"   data-ai="Music for sleep">sleep</button>
+            </div>
+            <p class="orb-read" id="orbRead">How are you feeling?</p>
+          </div>
+
+          <!-- Chat -->
+          <div class="chat" id="chat">
+            <div class="msg ai">
+              <div class="msg-ava"><img src="assets/muzora-logo.png" alt=""></div>
+              <div class="msg-bubble" id="chatIntro">Hey — tell me a feeling, an activity, or just a vibe. I'll shape the sound around it. <span class="wave-emoji">🎶</span></div>
+            </div>
+          </div>
+
+          <div class="pad-bottom"></div>
+        </div>
+
+        <!-- Composer -->
+        <div class="composer card-glass">
+          <div class="quick-chips" id="quickChips">
+            <button data-ai="I need peaceful English songs for studying for 2 hours">🎧 calm study session</button>
+            <button data-ai="Create an energetic workout playlist">⚡ workout energy</button>
+            <button data-ai="I'm feeling calm">🌙 late-night unwind</button>
+          </div>
+          <div class="composer-row">
+            <input type="text" id="aiInput" placeholder="Tell Muzora your mood…" autocomplete="off">
+            <button class="send" id="aiSend">
+              <svg viewBox="0 0 24 24"><path d="M4 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== TAB: LIBRARY ========== -->
+      <section class="scr scr-tab" id="scr-library">
+        <header class="hdr">
+          <h3 class="hdr-title">Your Library</h3>
+          <button class="btn-ghost sm" data-goto="profile">account</button>
+        </header>
+        <div class="scroll">
+          <div class="lib-tabs" id="libTabs">
+            <button class="on" data-libtab="playlists">Playlists <i>4</i></button>
+            <button data-libtab="favorites">Favorites <i id="favCount">3</i></button>
+            <button data-libtab="recent">Recent</button>
+          </div>
+          <div id="libPlaylists">
+            <div class="pl-cards" id="plCards"></div>
+          </div>
+          <div id="libFavorites" style="display:none">
+            <div class="track-list" id="favList"></div>
+          </div>
+          <div id="libRecent" style="display:none">
+            <div class="track-list" id="recentList"></div>
+          </div>
+          <div class="pad-bottom"></div>
+        </div>
+      </section>
+
+      <!-- ========== TAB: PROFILE ========== -->
+      <section class="scr scr-tab" id="scr-profile">
+        <header class="hdr"><h3 class="hdr-title">Profile</h3></header>
+        <div class="scroll">
+          <div class="profile-card card-glass">
+            <img class="pfp" src="assets/muzora-logo.png" alt="">
+            <div>
+              <h2 id="pfName">—</h2>
+              <p id="pfEmail">—</p>
+            </div>
+            <button class="btn-primary xs" data-toast="Profile editing coming in v2">Edit</button>
+          </div>
+
+          <div class="stats">
+            <div class="stat card-glass"><b id="statMin">412</b><span>minutes this week</span></div>
+            <div class="stat card-glass"><b id="statSongs">38</b><span>songs played</span></div>
+            <div class="stat card-glass"><b id="statMix">6</b><span>AI mood mixes</span></div>
+          </div>
+
+          <div class="row-head"><h4>Preferences</h4></div>
+          <div class="pref-list card-glass">
+            <label class="pref"><div><b>High quality audio</b><span>320 kbps streaming</span></div><input type="checkbox" checked class="toggle"><i></i></label>
+            <label class="pref"><div><b>Smart recommendations</b><span>learn from listening history</span></div><input type="checkbox" checked class="toggle"><i></i></label>
+            <label class="pref"><div><b>Data saver</b><span>reduce streaming quality on mobile data</span></div><input type="checkbox" class="toggle"><i></i></label>
+            <label class="pref"><div><b>Private session</b><span>hide listening activity</span></div><input type="checkbox" class="toggle"><i></i></label>
+          </div>
+
+          <div class="row-head"><h4>Account</h4></div>
+          <div class="pref-list card-glass">
+            <button class="pref-link" data-toast="Privacy policy">Privacy policy <span>›</span></button>
+            <button class="pref-link" data-toast="Terms of service">Terms of service <span>›</span></button>
+            <button class="pref-link" data-toast="Support">Help &amp; support <span>›</span></button>
+            <button class="pref-link danger" id="btnLogout">Log out <span>›</span></button>
+          </div>
+          <p class="ver">Muzora AI · v1.0 · your account</p>
+          <div class="pad-bottom"></div>
+        </div>
+      </section>
+
+      <!-- ========== OVERLAY: FULL PLAYER ========== -->
+      <section class="scr scr-over" id="scr-player">
+        <div class="player-bg" id="playerBg"></div>
+        <header class="over-hdr">
+          <button class="back" data-close="player">
+            <svg viewBox="0 0 24 24"><path d="M6 12h12M12 6l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <p class="label-eyebrow">NOW PLAYING</p>
+          <button class="queue-btn" data-toast="Queue: 3 tracks queued">
+            <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+        </header>
+
+        <div class="player-body">
+          <div class="lp-art" id="lpArt">
+            <div class="lp-disc" id="lpDisc"></div>
+          </div>
+          <div class="lp-meta">
+            <div>
+              <h1 id="lpTitle">Neon Monsoon</h1>
+              <p id="lpArtist">Aarya Vale · Dream Pop</p>
+            </div>
+            <button class="lp-fav" id="lpFav">♡</button>
+          </div>
+
+          <div class="lp-wave" id="lpWave"></div>
+          <div class="lp-time"><span id="tCur">0:42</span><span id="tDur">3:42</span></div>
+
+          <div class="lp-controls">
+            <button id="btnShuffle" class="ctl" title="shuffle">
+              <svg viewBox="0 0 24 24"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <button id="btnPrev" class="ctl">
+              <svg viewBox="0 0 24 24"><path d="M19 5v14L8 12l11-7zM5 4v16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button id="btnPlay" class="ctl play">
+              <svg class="ic-play" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5-13-7.5z" fill="currentColor"/></svg>
+              <svg class="ic-pause" viewBox="0 0 24 24"><path d="M7 4h3.5v16H7zM13.5 4H17v16h-3.5z" fill="currentColor"/></svg>
+            </button>
+            <button id="btnNext" class="ctl">
+              <svg viewBox="0 0 24 24"><path d="M5 5v14l11-7L5 5zM19 4v16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button id="btnRepeat" class="ctl" title="repeat">
+              <svg viewBox="0 0 24 24"><path d="M17 2l4 4-4 4M3 11V9a4 4 0 0 1 4-4h14M7 22l-4-4 4-4M21 13v2a4 4 0 0 1-4 4H3" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+
+          <div class="lp-up-next card-glass">
+            <div class="un-art" id="unArt"></div>
+            <div><p class="label-eyebrow">UP NEXT</p><p id="unTitle">Midnight Circuits — K3RN3L</p></div>
+            <button class="btn-ghost xs" data-toast="Playing next in 1 song">next</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== OVERLAY: AI MOOD PLAYLIST ========== -->
+      <section class="scr scr-over" id="scr-mood">
+        <div class="mood-hero" id="moodHero">
+          <header class="over-hdr">
+            <button class="back" data-close="mood">
+              <svg viewBox="0 0 24 24"><path d="M6 12h12M12 6l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <p class="label-eyebrow">AI MOOD SESSION</p>
+            <span></span>
+          </header>
+          <div class="mood-hero-body">
+            <h1 id="moodTitle">Calm Session</h1>
+            <p id="moodMeta">12 tracks · 48 min · generated by Muzora AI</p>
+            <div class="mood-tags" id="moodTags"></div>
+          </div>
+          <div class="mood-hero-fade"></div>
+        </div>
+        <div class="scroll mood-list">
+          <div class="mood-actions">
+            <button class="btn-primary" id="btnPlaySession">▶ Play session</button>
+            <button class="btn-ghost" id="btnSaveSession">Save</button>
+            <button class="btn-ghost" id="btnRegen">↻ Regenerate</button>
+          </div>
+          <div class="track-list" id="moodList"></div>
+          <div class="pad-bottom"></div>
+        </div>
+      </section>
+
+      <!-- ========== OVERLAY: PLAYLIST DETAILS ========== -->
+      <section class="scr scr-over" id="scr-playlist">
+        <div class="pl-hero" id="plHero">
+          <header class="over-hdr">
+            <button class="back" data-close="playlist">
+              <svg viewBox="0 0 24 24"><path d="M6 12h12M12 6l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <p class="label-eyebrow">PLAYLIST</p><span></span>
+          </header>
+          <div class="mood-hero-body">
+            <h1 id="plTitle">Neon Nights</h1>
+            <p id="plMeta">8 tracks · 32 min</p>
+          </div>
+          <div class="mood-hero-fade"></div>
+        </div>
+        <div class="scroll mood-list">
+          <div class="mood-actions">
+            <button class="btn-primary" data-playlist-play>▶ Play</button>
+            <button class="btn-ghost" data-toast="Shuffling playlist">Shuffle</button>
+          </div>
+          <div class="track-list" id="plList"></div>
+          <div class="pad-bottom"></div>
+        </div>
+      </section>
+
+      <!-- ========== OVERLAY: FAVORITES ========== -->
+      <section class="scr scr-over" id="scr-favorites">
+        <header class="over-hdr over-hdr-solid">
+          <button class="back" data-close="favorites">
+            <svg viewBox="0 0 24 24"><path d="M6 12h12M12 6l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <p class="label-eyebrow">FAVORITES</p><span></span>
+        </header>
+        <div class="scroll mood-list">
+          <h2 class="fav-title">Loved songs <span id="favCount2">3</span></h2>
+          <div class="track-list" id="favList2"></div>
+          <div class="pad-bottom"></div>
+        </div>
+      </section>
+
+      <!-- ========== CHROME: MINI PLAYER ========== -->
+      <div class="mini" id="mini" style="display:none">
+        <div class="mini-art" id="miniArt"></div>
+        <div class="mini-meta">
+          <b id="miniTitle">Neon Monsoon</b>
+          <span id="miniArtist">Aarya Vale</span>
+        </div>
+        <div class="mini-wave" id="miniWave"></div>
+        <button class="mini-play" id="miniPlay">
+          <svg class="ic-play" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5-13-7.5z" fill="currentColor"/></svg>
+          <svg class="ic-pause" viewBox="0 0 24 24"><path d="M7 4h3.5v16H7zM13.5 4H17v16h-3.5z" fill="currentColor"/></svg>
+        </button>
+        <button class="mini-next" id="miniNext">
+          <svg viewBox="0 0 24 24"><path d="M5 5v14l11-7L5 5zM19 4v16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
+      <!-- ========== CHROME: TAB BAR ========== -->
+      <nav class="tabbar" id="tabbar" style="display:none">
+        <button class="tab on" data-goto="home">
+          <svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21h-6v-6h-6v6H3z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linejoin="round"/></svg>
+          <span>Home</span>
+        </button>
+        <button class="tab" data-goto="search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span>Search</span>
+        </button>
+        <button class="tab tab-ai" data-goto="ai">
+          <span class="ai-orb"><img src="assets/muzora-logo.png" alt=""></span>
+          <span>AI</span>
+        </button>
+        <button class="tab" data-goto="library">
+          <svg viewBox="0 0 24 24"><path d="M4 4h4v16H4zM11 4h3v16h-3zM17 5l4 14" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Library</span>
+        </button>
+        <button class="tab" data-goto="profile">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+          <span>Profile</span>
+        </button>
+      </nav>
+
+      <!-- Toast -->
+      <div class="toast" id="toast"></div>
+
+    </div><!-- /screen -->
+  </div><!-- /phone -->
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
